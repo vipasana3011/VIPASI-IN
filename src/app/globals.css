@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAF4E8;
+    --foreground: #261315;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar matching Vipasi Wine & Champagne */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5EAD4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DFC19B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3E0B10;
+}
+
+/* Elegant selection */
+::selection {
+  background: #DFC19B;
+  color: #3E0B10;
+}
+
+/* Animated gold shimmer */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, rgba(223, 193, 155, 0.1) 0%, rgba(223, 193, 155, 0.3) 50%, rgba(223, 193, 155, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 4s infinite linear;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
