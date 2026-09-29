@@ -1,0 +1,10 @@
+# Ignore local development & scraping scripts
+scripts/
+*.py
+*.csv
+*.part
+*.txt
+drive_raw.html
+public/screenshots/
+.git
+.github
